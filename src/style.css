@@ -1,0 +1,30 @@
+h1,
+p {
+  font-family: Lato;
+}
+
+#result {
+  display: flex;
+  flex-direction:column-reverse;
+  height: 30vh;
+  width: 30vw;
+  margin: auto;
+  border: solid black 0.01rem;
+  justify-content: flex-start;
+  align-items: center;
+  padding:1%;
+}
+
+#temperature-out {
+  font-size: 3rem;
+}
+
+#icon{
+  margin-bottom:-3rem;
+  width:15vw;
+  height:20vh;
+}
+
+#celcius{
+  font-size: 1rem;
+}
