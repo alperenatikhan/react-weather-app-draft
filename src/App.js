@@ -1,5 +1,6 @@
 import React, { useState, UseEffect } from 'react';
 import './style.css';
+import Weather from './Weather.js';
 
 export default function App() {
   let [city, setCity] = useState('');
@@ -25,6 +26,7 @@ export default function App() {
   async function getWeatherByLocation(url, city) {
     const resp = await fetch(url, { origin: 'cors' });
     const respData = await resp.json();
+    console.log(respData);
     const cityName = respData.name;
 
     const countryName = respData.sys.country;
@@ -49,10 +51,8 @@ export default function App() {
   };
 
   return (
-    <div>
-      <h1>
-        What is the Weather in {city}
-      </h1>
+    <div className= "search-box">
+      <h1>What is the Weather in {city}</h1>
 
       <input
         id="city-check"
@@ -70,14 +70,44 @@ export default function App() {
 
       <p>Start editing to see some magic happen :)</p>
 
-      {temperature && <div id="result"> <h1 id= "temperature-out"> {temperature} <span id="celcius">°C </span></h1>
-      <img id="icon" src= {`https://raw.githubusercontent.com/yuvraaaj/openweathermap-api-icons/master/icons/${weatherIcon}.png`}/>
-       <img
+      {temperature && (
+        <div id="result">
+          {' '}
+          <div className="flag-city">
+            <img
               src={`https://www.countryflags.io/${country}/flat/64.png`}
               style={{ width: 30 }}
             />
-      
-      </div>}
+            <p> {city} </p>
+          </div>
+          <h1 id="temperature-out">
+            {' '}
+            {temperature} <span id="celcius">°C </span>
+          </h1>
+          <img
+            id="icon"
+            src={`https://raw.githubusercontent.com/yuvraaaj/openweathermap-api-icons/master/icons/${weatherIcon}.png`}
+          />
+        </div>
+      )}
+
+      <div className="container-fluid">
+        <div className="row">
+          {' '}
+          <div className="col-lg-3 col-md-6 col-sm-12">
+            <Weather city="New York" />
+          </div>
+          <div className="col-lg-3 col-md-6 col-sm-12">
+            <Weather city="London" />
+          </div>
+          <div className="col-lg-3 col-md-6 col-sm-12">
+            <Weather city="Paris" />
+          </div>
+          <div className="col-lg-3 col-md-6 col-sm-12">
+            <Weather city="Dubai" />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

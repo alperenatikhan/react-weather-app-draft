@@ -3,28 +3,73 @@ p {
   font-family: Lato;
 }
 
+.search-box{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align:center;
+  width:80vw;
+  margin:auto;
+
+}
+
 #result {
   display: flex;
-  flex-direction:column-reverse;
+  flex-direction: column-reverse;
   height: 30vh;
   width: 30vw;
   margin: auto;
   border: solid black 0.01rem;
   justify-content: flex-start;
   align-items: center;
-  padding:1%;
+  padding: 5%;
 }
 
 #temperature-out {
   font-size: 3rem;
 }
 
-#icon{
-  margin-bottom:-3rem;
-  width:15vw;
-  height:20vh;
+#icon {
+  margin-bottom: -3rem;
+  width: 15vw;
+  height: 20vh;
 }
 
-#celcius{
+#celcius {
   font-size: 1rem;
+}
+
+.flag-city {
+  display: flex;
+  flex-direction: row;
+}
+
+img {
+  opacity: 0.5;
+  width: 15rem;
+  height: 10rem;
+}
+
+img:hover {
+  opacity: 0.1;
+}
+
+.photo-weather-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  place-items: center;
+}
+
+.centered-weather-text {
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  place-items: center;
+  position: absolute;
 }
