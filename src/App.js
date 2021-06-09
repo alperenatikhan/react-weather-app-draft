@@ -54,7 +54,7 @@ export default function App() {
     <div className="app-display">
       <div className="search-box">
         <h1>
-          What is the Weather in {selectedCity} {country}
+          How is the weather in {selectedCity} {country}
         </h1>
 
         <input
@@ -74,7 +74,7 @@ export default function App() {
           Check Weather!{' '}
         </button>
 
-        <p>Start editing to see some magic happen :)</p>
+        <p>Let's see!</p>
       </div>
 
       {temperature && <Weather city={selectedCity} icon={weatherIcon}/>
