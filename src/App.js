@@ -55,15 +55,17 @@ export default function App() {
       <div className="search-box">
         <h1>
           How is the weather in {selectedCity} {country}
+          {country && (
+            <img
+              src={`https://www.countryflags.io/${country}/flat/64.png`}
+              style={{ width: '40px', height: '20px' }}
+            />
+          )}
         </h1>
 
-        <input
-          id="city-check"
-          type="text"
-         
-        />
+        <input id="city-check" type="text" />
         <button
-          style={{ "width": '70%',"margin": "1rem auto"  }}
+          style={{ width: '70%', margin: '1rem auto' }}
           className="btn-success"
           onClick={() => {
             document.body.style.backgroundColor = 'lightgray';
@@ -77,7 +79,7 @@ export default function App() {
         <p>Let's see!</p>
       </div>
 
-      {temperature && <Weather city={selectedCity} icon={weatherIcon}/>
+      {temperature && <Weather city={selectedCity} icon={weatherIcon} />
 
       /*
       (
@@ -115,28 +117,21 @@ export default function App() {
           <div className="col-lg-3 col-md-6 col-sm-12">
             <Weather city="Paris" />
           </div>
-
           <div className="col-lg-3 col-md-6 col-sm-12">
             <Weather city="Berlin" />
-            </div>
-
-           <div className="col-lg-3 col-md-6 col-sm-12">
+          </div>
+          <div className="col-lg-3 col-md-6 col-sm-12">
             <Weather city="Barcelona" />
           </div>
-
           <div className="col-lg-3 col-md-6 col-sm-12">
             <Weather city="Rio de Janeiro" />
           </div>
-
-
           <div className="col-lg-3 col-md-6 col-sm-12">
             <Weather city="Dubai" />
           </div>
-
-<div className="col-lg-3 col-md-6 col-sm-12">
+          <div className="col-lg-3 col-md-6 col-sm-12">
             <Weather city="Bangkok" />
           </div>
-
         </div>
       </div>
     </div>
