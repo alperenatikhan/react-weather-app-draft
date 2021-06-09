@@ -8,7 +8,7 @@ export default function Weather(props) {
 
   useEffect(() => {
     handleWeather();
-  }, []);
+  }, [props.city]);
 
   const apikey = '3265874a2c77ae4a04bb96236a642d2f';
   const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${
@@ -31,15 +31,11 @@ export default function Weather(props) {
       })
       .then(object => {
         setWeatherCond(object);
-        
       })
       .catch(error => console.log(error));
   }
 
-
   return (
-
-    
     <div className="photo-weather-wrapper">
       <img
         src={`https://source.unsplash.com/800x800/?${props.city}/${Math.ceil(
@@ -48,12 +44,20 @@ export default function Weather(props) {
       />
       <div className="centered-weather-text">
         <h1 style={{ fontSize: '1.5rem' }}> {weatherCond.name} </h1>
-         
-          <h1> { `${Math.floor(weatherCond.main?.temp)}`}
-    
-          </h1>
-          
-      
+
+        <h1>
+          {' '}
+          {`${Math.floor(weatherCond.main?.temp)}`}
+          {props.icon && (
+            <img
+              id="main-pic"
+              className="icon"
+              src={`https://raw.githubusercontent.com/yuvraaaj/openweathermap-api-icons/master/icons/${
+                props.icon
+              }.png`}
+            />
+          )}
+        </h1>
       </div>
     </div>
   );

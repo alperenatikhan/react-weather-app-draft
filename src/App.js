@@ -3,7 +3,7 @@ import './style.css';
 import Weather from './Weather.js';
 
 export default function App() {
-  let [city, setCity] = useState('');
+  let [selectedCity, setSelectedCity] = useState('');
   let [temperature, setTemperature] = useState('');
   let [country, setCountry] = useState('');
   let [weatherIcon, setWeatherIcon] = useState('');
@@ -20,7 +20,7 @@ export default function App() {
       bgColor = '#ffe963';
     }
 
-    document.body.style.backgroundColor = bgColor;
+    //document.body.style.backgroundColor = bgColor;
   }
 
   async function getWeatherByLocation(url, city) {
@@ -30,7 +30,7 @@ export default function App() {
     const cityName = respData.name;
 
     const countryName = respData.sys.country;
-    setCity(`${cityName}  (${countryName})`);
+    setSelectedCity(`${cityName}`);
     setCountry(countryName);
     const weatherCond = respData.weather[0].main;
     const temperature_info = Math.floor(respData.main.temp - 273.15);
@@ -51,29 +51,36 @@ export default function App() {
   };
 
   return (
-    <div className="app-diplay">
-    <div className= "search-box">
-      <h1>What is the Weather in {city}</h1>
+    <div className="app-display">
+      <div className="search-box">
+        <h1>
+          What is the Weather in {selectedCity} {country}
+        </h1>
 
-      <input
-        id="city-check"
-        type="text"
-        onChange={el => setCity(el.target.value)}
-      />
-      <button
-        onClick={() => {
-          document.body.style.backgroundColor = 'lightgray';
-          handleWeather(document.getElementById('city-check').value);
-        }}
-      >
-        {' '}
-      </button>
+        <input
+          id="city-check"
+          type="text"
+         
+        />
+        <button
+          style={{ width: '70%' }}
+          className="btn-success"
+          onClick={() => {
+            document.body.style.backgroundColor = 'lightgray';
+            handleWeather(document.getElementById('city-check').value);
+          }}
+        >
+          {' '}
+          Check Weather!{' '}
+        </button>
 
-      <p>Start editing to see some magic happen :)</p>
-
+        <p>Start editing to see some magic happen :)</p>
       </div>
 
-      {temperature && (
+      {temperature && <Weather city={selectedCity} icon={weatherIcon}/>
+
+      /*
+      (
         <div id="result">
           {' '}
           <div className="flag-city">
@@ -92,7 +99,9 @@ export default function App() {
             src={`https://raw.githubusercontent.com/yuvraaaj/openweathermap-api-icons/master/icons/${weatherIcon}.png`}
           />
         </div>
-      )}
+      )
+      */
+      }
 
       <div className="container-fluid">
         <div className="row">
