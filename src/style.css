@@ -31,7 +31,7 @@ p {
 
 .icon {
   width: 8vw;
-  height: 8vh;
+  height: 6vh;
   filter: drop-shadow(5px 5px 10px black) contrast(200);
 }
 
@@ -49,7 +49,7 @@ img {
   opacity: 0.5;
   width: 15rem;
   height: 10rem;
-  filter: blur(0.04em) contrast(0.7) saturate(0.7);
+  filter: blur(0.045em) contrast(0.7) saturate(0.7);
 }
 
 img:hover {
