@@ -7,7 +7,7 @@ export default function Weather(props) {
   const [weatherCond, setWeatherCond] = useState({});
 
   useEffect(() => {
-    ifClicked();
+    handleWeather();
   }, []);
 
   const apikey = '3265874a2c77ae4a04bb96236a642d2f';
@@ -15,7 +15,7 @@ export default function Weather(props) {
     props.city
   }&appid=${apikey}&units=metric`;
 
-  function ifClicked() {
+  function handleWeather() {
     fetch(apiUrl)
       .then(res => {
         if (res.ok) {
@@ -31,17 +31,29 @@ export default function Weather(props) {
       })
       .then(object => {
         setWeatherCond(object);
-        console.log(weatherCond);
+        
       })
       .catch(error => console.log(error));
   }
 
+
   return (
-    <div className="photo-weather-wrapper" >
-      <img src="https://images.unsplash.com/photo-1490644658840-3f2e3f8c5625?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80" />
+
+    
+    <div className="photo-weather-wrapper">
+      <img
+        src={`https://source.unsplash.com/800x800/?${props.city}/${Math.ceil(
+          Math.random() * 100
+        )}`}
+      />
       <div className="centered-weather-text">
-      <h1 style={{"fontSize" : "1.5rem"}}> {weatherCond.name} </h1>
-      <h1> {Math.floor(weatherCond.main?.temp)} </h1>
+        <h1 style={{ fontSize: '1.5rem' }}> {weatherCond.name} </h1>
+         
+          <h1> { `${Math.floor(weatherCond.main?.temp)}`}
+    
+          </h1>
+          
+      
       </div>
     </div>
   );

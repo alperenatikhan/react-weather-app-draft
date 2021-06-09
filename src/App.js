@@ -51,6 +51,7 @@ export default function App() {
   };
 
   return (
+    <div className="app-diplay">
     <div className= "search-box">
       <h1>What is the Weather in {city}</h1>
 
@@ -69,6 +70,8 @@ export default function App() {
       </button>
 
       <p>Start editing to see some magic happen :)</p>
+
+      </div>
 
       {temperature && (
         <div id="result">

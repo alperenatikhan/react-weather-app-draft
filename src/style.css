@@ -30,10 +30,11 @@ p {
   font-size: 3rem;
 }
 
-#icon {
-  margin-bottom: -3rem;
-  width: 15vw;
-  height: 20vh;
+.icon {
+  width: 5vw;
+  height: 5vh;
+  filter: drop-shadow(5px 5px 10px black);
+  
 }
 
 #celcius {
@@ -46,9 +47,11 @@ p {
 }
 
 img {
-  opacity: 0.5;
+  margin:5% 0;
+ opacity:0.6;
   width: 15rem;
   height: 10rem;
+  filter: blur(0.03em) contrast(0.7) saturate(0.7);
 }
 
 img:hover {
@@ -72,4 +75,5 @@ img:hover {
   justify-content: center;
   place-items: center;
   position: absolute;
+  text-shadow: 10px 10px 100px whitesmoke;
 }
