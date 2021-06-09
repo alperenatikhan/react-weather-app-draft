@@ -3,16 +3,14 @@ p {
   font-family: Lato;
 }
 
-.search-box{
-
-  display:flex;
+.search-box {
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  text-align:center;
-  width:50vw;
-  margin:auto;
-
+  text-align: center;
+  width: 50vw;
+  margin: 1rem auto;
 }
 
 #result {
@@ -35,7 +33,6 @@ p {
   width: 10vw;
   height: 10vh;
   filter: drop-shadow(5px 5px 10px black) contrast(200);
-  
 }
 
 #celcius {
@@ -48,11 +45,11 @@ p {
 }
 
 img {
-  margin:5% 0;
- opacity:0.6;
+  margin: 5% 0;
+  opacity: 0.5;
   width: 15rem;
   height: 10rem;
-  filter: blur(0.03em) contrast(0.7) saturate(0.7);
+  filter: blur(0.04em) contrast(0.7) saturate(0.7);
 }
 
 img:hover {

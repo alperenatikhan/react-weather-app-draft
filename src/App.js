@@ -63,7 +63,7 @@ export default function App() {
          
         />
         <button
-          style={{ width: '70%' }}
+          style={{ "width": '70%',"margin": "1rem auto"  }}
           className="btn-success"
           onClick={() => {
             document.body.style.backgroundColor = 'lightgray';
@@ -115,9 +115,28 @@ export default function App() {
           <div className="col-lg-3 col-md-6 col-sm-12">
             <Weather city="Paris" />
           </div>
+
+          <div className="col-lg-3 col-md-6 col-sm-12">
+            <Weather city="Berlin" />
+            </div>
+
+           <div className="col-lg-3 col-md-6 col-sm-12">
+            <Weather city="Barcelona" />
+          </div>
+
+          <div className="col-lg-3 col-md-6 col-sm-12">
+            <Weather city="Rio de Janeiro" />
+          </div>
+
+
           <div className="col-lg-3 col-md-6 col-sm-12">
             <Weather city="Dubai" />
           </div>
+
+<div className="col-lg-3 col-md-6 col-sm-12">
+            <Weather city="Bangkok" />
+          </div>
+
         </div>
       </div>
     </div>
