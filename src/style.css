@@ -46,10 +46,10 @@ p {
 
 img {
   margin: 5% 0;
-  opacity: 0.5;
+  opacity: 0.6;
   width: 15rem;
   height: 10rem;
-  filter: blur(0.045em) contrast(0.7) saturate(0.7);
+  filter: blur(0.045em) contrast(0.8) saturate(0.8);
 }
 
 img:hover {
@@ -73,5 +73,5 @@ img:hover {
   justify-content: center;
   place-items: center;
   position: absolute;
-  text-shadow: 10px 10px 100px whitesmoke;
+  text-shadow: 10px 10px 20px white;
 }
