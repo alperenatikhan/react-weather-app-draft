@@ -7,9 +7,7 @@ export default function Weather(props) {
   const [data, setData] = useState([props.city]);
   const [weatherCond, setWeatherCond] = useState({});
 
-  useEffect(() => {
-    handleWeather();
-  }, [props.city]);
+  useEffect(() => handleWeather(),[props.city]);
 
 
   const apikey = '3265874a2c77ae4a04bb96236a642d2f';
