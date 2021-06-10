@@ -68,7 +68,7 @@ export default function App() {
           style={{ width: '70%', margin: '1rem auto' }}
           className="btn-success"
           onClick={() => {
-            document.body.style.backgroundColor = 'lightgray';
+            
             handleWeather(document.getElementById('city-check').value);
           }}
         >
@@ -79,7 +79,7 @@ export default function App() {
         <p>Let's see!</p>
       </div>
 
-      {temperature && <Weather city={selectedCity} icon={weatherIcon} />
+      {temperature && <Weather city={selectedCity} newCity= {selectedCity} icon={weatherIcon} />
 
       /*
       (
