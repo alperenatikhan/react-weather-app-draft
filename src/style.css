@@ -84,5 +84,5 @@ img:hover {
   position: absolute;
   text-shadow: 1px 1px 1px white, -1px -1px 1px white, 2px 2px 2px white,
     -2px -2px 2px white;
-  mix-blend-mode: multiply;
+  mix-blend-mode: darken;
 }
