@@ -82,7 +82,7 @@ img:hover {
   justify-content: center;
   place-items: center;
   position: absolute;
-  text-shadow: 1px 1px 1px white, -1px -1px 1px white, 2px 2px 2px white,
-    -2px -2px 2px white;
-  mix-blend-mode: darken;
+  text-shadow: 1px 1px 1px white, -1px -1px 1px white, 2px 2px 5px white,
+    -2px -2px 5px white;
+
 }
