@@ -58,7 +58,7 @@ img {
   opacity: 0.65;
   width: 15rem;
   height: 10rem;
-  filter: blur(0.045em) contrast(0.8) saturate(0.8);
+  filter: blur(0.045em) contrast(0.6) saturate(0.8);
 }
 
 img:hover {
@@ -82,6 +82,7 @@ img:hover {
   justify-content: center;
   place-items: center;
   position: absolute;
-  text-shadow: 10px 10px 20px white;
-
+  text-shadow: 1px 1px 1px white, -1px -1px 1px white, 2px 2px 2px white,
+    -2px -2px 2px white;
+  mix-blend-mode: multiply;
 }
