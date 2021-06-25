@@ -5,6 +5,7 @@ import axios from 'axios';
 export default function Weather(props) {
   const [data, setData] = useState([props.city]);
   const [weatherCond, setWeatherCond] = useState({});
+  const [showDetails, setShowDetails] = useState(false);
 
   useEffect(() => handleWeather(), [props.city]);
 
@@ -33,30 +34,85 @@ export default function Weather(props) {
       .catch(error => console.log(error));
   }
 
-  return (
-    <div className="photo-weather-wrapper">
-      <img
-        src={`https://source.unsplash.com/800x800/?${
-          props.city
-        }?color:white/${Math.ceil(Math.random() * 100)}`}
-      />
-      <div className="centered-weather-text">
-        <h1 style={{ fontSize: '1.5rem' }}> {weatherCond.name} </h1>
+  function HandleDetails() {
+    console.log(weatherCond, 'weatherCond');
+    return (
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}
+      >
+        <h4 style={{padding: "0, 10%" }}>{`Weather in ${
+          weatherCond.name
+        }`}</h4>
 
-        <h1>
-          {' '}
-          {`${Math.floor(weatherCond.main?.temp)}`}
-          {props.icon && (
-            <img
-              id="main-pic"
-              className="icon"
-              src={`https://raw.githubusercontent.com/yuvraaaj/openweathermap-api-icons/master/icons/${
-                props.icon
-              }.png`}
-            />
-          )}
-        </h1>
+        <table style={{ margin: '1rem' }}>
+          <tr>
+            <td> Temperature : {Math.floor(weatherCond.main?.temp)} </td>{' '}
+          </tr>
+          <tr>
+            {' '}
+            Mood : {weatherCond.weather[0].description}{' '}
+            <span>
+              {' '}
+              <img
+                src={`https://raw.githubusercontent.com/yuvraaaj/openweathermap-api-icons/master/icons/${
+                  weatherCond.weather[0].icon
+                }.png`}
+                style={{ width: '1.5rem', height: '1rem' }}
+              />{' '}
+            </span>
+          </tr>
+          <tr> Feels like : {Math.floor(weatherCond.main?.feels_like)} </tr>
+          <tr>
+            <td>
+              Minimum Temperature : {Math.floor(weatherCond.main?.temp_min)}{' '}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Maximum Temperature : {Math.floor(weatherCond.main?.temp_max)}{' '}
+            </td>
+          </tr>
+          <tr> Humidity : {weatherCond.main?.humidity}</tr>
+        </table>
       </div>
-    </div>
+    );
+  }
+
+  return (
+    <>
+      <div
+        className="photo-weather-wrapper"
+        onClick={() => setShowDetails(!showDetails)}
+      >
+        <img
+          src={`https://source.unsplash.com/800x800/?${
+            props.city
+          }?color:white/${Math.ceil(Math.random() * 10)}`}
+        />
+        <div className="centered-weather-text">
+          <h1 style={{ fontSize: '1.5rem' }}> {weatherCond.name} </h1>
+
+          <h1>
+            {' '}
+            {`${Math.floor(weatherCond.main?.temp)}`}
+            {props.icon && (
+              <img
+                id="main-pic"
+                className="icon"
+                src={`https://raw.githubusercontent.com/yuvraaaj/openweathermap-api-icons/master/icons/${
+                  props.icon
+                }.png`}
+              />
+            )}
+          </h1>
+        </div>
+      </div>
+      {showDetails && <HandleDetails />}
+    </>
   );
 }
