@@ -56,9 +56,9 @@ export default function App() {
         <h1>
           How is the weather in {selectedCity} {country}
           {country && (
-            <img
+            <img className="flag-image"
               src={`https://www.countryflags.io/${country}/flat/64.png`}
-              style={{ width: '40px', height: '20px' }}
+              style={{ width: '40px', height: '40px' }}
             />
           )}
         </h1>

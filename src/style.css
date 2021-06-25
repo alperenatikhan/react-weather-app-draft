@@ -22,6 +22,10 @@ p {
   margin: 1rem auto;
 }
 
+.flag-image {
+  
+}
+
 #result {
   display: flex;
   flex-direction: column-reverse;
@@ -53,12 +57,18 @@ p {
   flex-direction: row;
 }
 
-img {
+.city-photo{
   margin: 5% 0;
   opacity: 0.65;
   width: 15rem;
   height: 10rem;
   filter: blur(0.048em) contrast(0.8) saturate(0.8);
+
+}
+
+
+img {
+
 }
 
 img:hover {
@@ -82,10 +92,9 @@ img:hover {
   justify-content: center;
   place-items: center;
   position: absolute;
- /* text-shadow: 1px 1px 10px white, -1px -1px 10px white, 2px 2px 50px white,
+  /* text-shadow: 1px 1px 10px white, -1px -1px 10px white, 2px 2px 50px white,
     -2px -2px 50px white;
 */
-text-shadow: white 0px 0px 10px;
--webkit-text-stroke: black 0.15px;;
-
+  text-shadow: white 0px 0px 10px;
+  -webkit-text-stroke: black 0.15px;
 }

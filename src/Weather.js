@@ -89,7 +89,7 @@ export default function Weather(props) {
         className="photo-weather-wrapper"
         onClick={() => setShowDetails(!showDetails)}
       >
-        <img
+        <img className="city-photo"
           src={`https://source.unsplash.com/800x800/?${
             props.city
           }?color:white/${Math.ceil(Math.random() * 10)}`}
