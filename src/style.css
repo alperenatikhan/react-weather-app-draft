@@ -23,7 +23,6 @@ p {
 }
 
 .flag-image {
-  
 }
 
 #result {
@@ -57,21 +56,18 @@ p {
   flex-direction: row;
 }
 
-.city-photo{
+.city-photo {
   margin: 5% 0;
-  opacity: 0.65;
+  opacity: 0.50;
   width: 15rem;
   height: 10rem;
-  filter: blur(0.048em) contrast(0.8) saturate(0.8);
-
+  filter: blur(0.049em) contrast(0.7) saturate(0.7);
 }
-
 
 img {
-
 }
 
-img:hover {
+.city-photo:hover {
   opacity: 0.1;
 }
 
@@ -96,5 +92,5 @@ img:hover {
     -2px -2px 50px white;
 */
   text-shadow: white 0px 0px 10px;
-  -webkit-text-stroke: black 0.15px;
+  -webkit-text-stroke: orangered 0.20px;
 }
