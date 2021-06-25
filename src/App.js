@@ -81,57 +81,17 @@ export default function App() {
 
       {temperature && <Weather city={selectedCity} newCity= {selectedCity} icon={weatherIcon} />
 
-      /*
-      (
-        <div id="result">
-          {' '}
-          <div className="flag-city">
-            <img
-              src={`https://www.countryflags.io/${country}/flat/64.png`}
-              style={{ width: 30 }}
-            />
-            <p> {city} </p>
-          </div>
-          <h1 id="temperature-out">
-            {' '}
-            {temperature} <span id="celcius">°C </span>
-          </h1>
-          <img
-            id="icon"
-            src={`https://raw.githubusercontent.com/yuvraaaj/openweathermap-api-icons/master/icons/${weatherIcon}.png`}
-          />
-        </div>
-      )
-      */
+    
       }
-
+      
       <div className="container-fluid">
         <div className="row">
-          {' '}
-          <div className="col-lg-3 col-md-6 col-sm-12">
-            <Weather city="New York" />
-          </div>
-          <div className="col-lg-3 col-md-6 col-sm-12">
-            <Weather city="London" />
-          </div>
-          <div className="col-lg-3 col-md-6 col-sm-12">
-            <Weather city="Paris" />
-          </div>
-          <div className="col-lg-3 col-md-6 col-sm-12">
-            <Weather city="Berlin" />
-          </div>
-          <div className="col-lg-3 col-md-6 col-sm-12">
-            <Weather city="Barcelona" />
-          </div>
-          <div className="col-lg-3 col-md-6 col-sm-12">
-            <Weather city="Rio de Janeiro" />
-          </div>
-          <div className="col-lg-3 col-md-6 col-sm-12">
-            <Weather city="Dubai" />
-          </div>
-          <div className="col-lg-3 col-md-6 col-sm-12">
-            <Weather city="Bangkok" />
-          </div>
+
+{["New York", "London", "Paris", "Berlin","Barcelona", "Rio De Janeiro", "Dubai", "Bangkok", "Tokyo", "Moscow"].map(item=> <div className="col-lg-3 col-md-6 col-sm-12">
+            <Weather city= {item} />
+          </div> )}
+
+      
         </div>
       </div>
     </div>
