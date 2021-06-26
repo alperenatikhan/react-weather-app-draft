@@ -68,7 +68,7 @@ img {
 }
 
 .city-photo:hover {
-  opacity: 0.1;
+ opacity:0.9;
 }
 
 .photo-weather-wrapper {
