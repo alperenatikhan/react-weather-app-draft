@@ -58,7 +58,7 @@ p {
 
 .city-photo {
   margin: 5% 0;
-  opacity: 0.60;
+  opacity: 0.7;
   width: 15rem;
   height: 10rem;
   filter: blur(0.049em) contrast(0.8) saturate(0.8);
@@ -93,7 +93,9 @@ img {
   /* text-shadow: 1px 1px 10px white, -1px -1px 10px white, 2px 2px 50px white,
     -2px -2px 50px white;
 */
-  -webkit-text-stroke: aliceblue 0.2px;
-  backdrop-filter: opacity(0.1) blur(50px) saturate(0.01) contrast(0.01);
+color: white;
+  -webkit-text-stroke:white 1px;
+  text-shadow: 1px 1px 5px black; 
+  backdrop-filter: opacity(0.1) blur(100px);
     mix-blend-mode: multiply;
 }
