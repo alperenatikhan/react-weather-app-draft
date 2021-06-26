@@ -58,7 +58,7 @@ p {
 
 .city-photo {
   margin: 5% 0;
-  opacity: 0.7;
+  opacity: 0.8;
   width: 15rem;
   height: 10rem;
   filter: blur(0.049em) contrast(0.8) saturate(0.8);
