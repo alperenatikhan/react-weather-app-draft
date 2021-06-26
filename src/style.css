@@ -84,7 +84,7 @@ img {
   height: 5rem;
   display: flex;
 
-  background-color: rgba(255,255,255,0.01);
+
   flex-direction: column;
   text-align: center;
   justify-content: center;
@@ -94,6 +94,6 @@ img {
     -2px -2px 50px white;
 */
   -webkit-text-stroke: aliceblue 0.2px;
-  backdrop-filter: opacity(0.1) blur(5rem) saturate(0.01) contrast(0.01);
-    mix-blend-mode: screen;
+  backdrop-filter: opacity(0.1) blur(50px) saturate(0.01) contrast(0.01);
+    mix-blend-mode: multiply;
 }
